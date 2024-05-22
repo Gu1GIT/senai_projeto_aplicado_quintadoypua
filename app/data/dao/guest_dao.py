@@ -26,7 +26,7 @@ class GuestDAO:
         cursor.execute(
             'INSERT INTO guest (document, created_at, name, surname, country, phone) VALUES (?, ?, ?, ?, ?, ?);'
             , (guest_dto['document'], guest_dto['created_at'], guest_dto['name'], guest_dto['surname'], guest_dto['country'], guest_dto['phone'],))
-
+        self.db.commit()
 
     def find(self, document) -> Guest | None:
         cursor = self.db.cursor()

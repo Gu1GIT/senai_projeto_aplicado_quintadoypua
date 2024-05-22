@@ -28,6 +28,19 @@ def create_app(test_config=None):
     @app.get('/index')
     def index():
         return render_template('index.html')
+    
+    @app.get('/cadastroHospedes')
+    def cadastroHospedes():               
+        return render_template('cadastroHospedes.html')  
+    
+    @app.get('/cadastroReservas')
+    def cadastroReservas():               
+        return render_template('cadastroReservas.html')
+    
+    
+    @app.get('/list')
+    def list():               
+        return render_template('list.html')  
 
     @app.get('/hello')
     def hello():

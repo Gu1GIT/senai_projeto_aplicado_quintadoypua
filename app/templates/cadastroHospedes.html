@@ -17,7 +17,11 @@
 
         <div class="main">
             <h1>Cadastro Hóspedes</h1>
-            <form method="get" action="cadastroHospedes">
+            <form method="POST" action="{{ url_for('guests.cria_hospede') }}">
+                <p>
+                    <label for="name">Documento</label><br>
+                    <input type="text" id="document" name="document" size="30" required>
+                </p>
                 <p>
                     <label for="name">Nome</label><br>
                     <input type="text" id="name" name="name" size="30" required>

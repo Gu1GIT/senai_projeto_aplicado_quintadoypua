@@ -91,3 +91,16 @@ def atualizar_hospede():
     guest = Guest(guest_dto)
     guest_dao.update(guest)
     return 'UPDATED', 200
+
+@bp.get('/list')
+def list():
+        
+    # Connect to the SQLite3 datatabase and 
+    # SELECT  Rows from the guest table.
+    db = get_db()
+    guest_dao = GuestDAO(db)
+    rows = guest_dao.find_many()
+
+    
+    # Send the results of the SELECT to the list.html page
+    return render_template("list.html", rows=rows)   
